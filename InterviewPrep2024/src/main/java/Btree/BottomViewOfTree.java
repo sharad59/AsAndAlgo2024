@@ -36,6 +36,10 @@ public class BottomViewOfTree {
 		Tree tree = new Tree(root);
 		System.out.println("Bottom view of the given binary tree:");
 		tree.bottomView();
+		TreeMap<Integer, int[]> m = new TreeMap<>();
+
+	    tree.printBottomViewUtil(root, 0, 0, m);
+	    //curr is height of tree
 	}
 
 	static class Tree {

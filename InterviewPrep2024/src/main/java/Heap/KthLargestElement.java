@@ -1,5 +1,6 @@
 package Heap;
 
+import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KthLargestElement {
@@ -21,6 +22,8 @@ public class KthLargestElement {
     //Kth  largest using Max Heap
 	static void kth_Largest_MaxHeap(int[] arr, int k) {
 		PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+		//PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+
 		int n = arr.length;
 		for (int i = 0; i < arr.length; i++) {
 			pq.add(arr[i]);

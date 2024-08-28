@@ -20,6 +20,7 @@ public class TopKFrequentElements {
 static  int[] getTopKFrequentElements(int arr[],int k) {
 	int outputArr []=new int [k];
 	PriorityQueue<pair> pq =new PriorityQueue<pair>((a,b)->{return b.sec-a.sec;});
+	
 	Map<Integer,Integer> map = new HashMap<>();
 	for(int i:arr) {
 		map.put(i, map.getOrDefault(i, 0)+1);
@@ -37,7 +38,7 @@ static  int[] getTopKFrequentElements(int arr[],int k) {
  public static void main (String args[]) {
 	 
 	 int k=2;
-	 int arr[]= {1,1,1,2,2,3};
+	 int arr[]= {1,1,1,2,2,3,9,9,9,9};
 	 
 	 System.out.println( Arrays.toString (getTopKFrequentElements(arr, k)));
 	 

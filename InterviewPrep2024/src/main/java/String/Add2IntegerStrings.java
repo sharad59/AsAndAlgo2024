@@ -1,4 +1,4 @@
-package String;
+ 6package String;
 
 public class Add2IntegerStrings {
 

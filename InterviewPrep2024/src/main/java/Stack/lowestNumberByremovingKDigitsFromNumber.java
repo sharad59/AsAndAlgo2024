@@ -14,6 +14,7 @@ public class lowestNumberByremovingKDigitsFromNumber {
 			return num;
 		}
 		Stack<Character> s = new Stack<Character>();
+//s = "1432219";
 
 		for (int i = 0; i < num.length(); i++) {
 			char c = num.charAt(i);

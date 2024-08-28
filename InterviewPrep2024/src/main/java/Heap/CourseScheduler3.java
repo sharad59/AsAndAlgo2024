@@ -50,7 +50,13 @@ Return the maximum number of courses that you can take.
 	 
 	public static void main(String args[]) {
 	
-	int arr[][]= {{100,200},{200,1300},{1000,1250},{2000,3200}};
+	int arr[][]= {
+			
+			{100,200},
+			{200,1300},
+	        {1000,1250},
+	        {2000,3200}
+	       };
 	
 	System.out.println(scheduleCourse(arr));
 	}

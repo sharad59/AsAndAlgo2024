@@ -3,7 +3,10 @@ package Btree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.TreeMap;
+import java.util.Vector;
 
 public class DiagonalTraversal {
 
@@ -54,5 +57,33 @@ public class DiagonalTraversal {
 			System.out.print(diagonalValues.get(i) + " ");
 		}
 		System.out.println();
+	}
+	
+	static void diagonalPrintUtil(Node root, int d, TreeMap<Integer, Vector<Integer>> diagonalPrint) {
+
+		if (root == null)
+			return;
+
+		Vector<Integer> k = diagonalPrint.get(d);
+
+		if (k == null) {
+			k = new Vector<>();
+		}
+			k.add(root.key);
+		
+		diagonalPrint.put(d, k);
+
+		diagonalPrintUtil(root.left, d + 1, diagonalPrint);
+		diagonalPrintUtil(root.right, d, diagonalPrint);
+	}
+
+	static void diagonalPrint(Node root) {
+		TreeMap<Integer, Vector<Integer>> diagonalPrint = new TreeMap<>();
+		diagonalPrintUtil(root, 0, diagonalPrint);
+
+		System.out.println("Diagonal Traversal of Binary Tree");
+		for (Entry<Integer, Vector<Integer>> entry : diagonalPrint.entrySet()) {
+			System.out.println(entry.getValue());
+		}
 	}
 }

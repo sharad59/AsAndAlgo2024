@@ -36,7 +36,7 @@ public class IsSumTree {
 		if (node == null || isLeaf(node) == 1)
 			return 1;
 
-		if (isSumTree1(node.left) != 0 && isSumTree1(node.right) != 0) {
+		if (isSumTree1(node.left) == 1 && isSumTree1(node.right) == 1) {
 			if (node.left == null)
 				ls = 0;
 			else if (isLeaf(node.left) == 1) 

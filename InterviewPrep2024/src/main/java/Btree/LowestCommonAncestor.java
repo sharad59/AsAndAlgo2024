@@ -7,16 +7,20 @@ public class LowestCommonAncestor {
 		if (root == null || p == null || q == null) {
 			return null;
 		}
+		if (root.key == p.key || root.key == q.key)
+			return root;
+
 		Node left = findNode(root.left, p, q);
 		Node right = findNode(root.right, p, q);
 
 		if (left == null)
 			return right;
+
 		else if (right == null)
 			return left;
-		else {
+		else
 			return root;
-		}
+
 	}
 
 	public static void main(String args[]) {
@@ -29,7 +33,8 @@ public class LowestCommonAncestor {
 		tree.root.left.right = new Node(5);
 		tree.root.right.left = new Node(6);
 		tree.root.right.right = new Node(7);
-		System.out.println("LCA(4, 5) = " + tree.findNode(tree.root, tree.root.left.left, tree.root.left.right).key);
+		Node n = tree.findNode(tree.root, tree.root.left.left, tree.root.left.right);
+		System.out.println("LCA(4, 5) = " + n.key);
 		// System.out.println("LCA(4, 6) = " + tree.findNode(4, 6).data);
 		// System.out.println("LCA(3, 4) = " + tree.findLCA(3, 4).data);
 		// System.out.println("LCA(2, 4) = " + tree.findLCA(2, 4).data);
