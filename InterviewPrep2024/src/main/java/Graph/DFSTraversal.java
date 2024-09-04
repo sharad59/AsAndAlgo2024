@@ -44,9 +44,8 @@ public class DFSTraversal {
 		g.addEdge(2, 0);
 		g.addEdge(2, 3);
 		g.addEdge(3, 3);
-		// System.out.println("Following is Depth First Traversal " + "(starting from
-		// vertex 2)");
-		// g.DFS(2);
+		 System.out.println("Following is Depth First Traversal " + "(starting from vertex 2)");
+		 g.DFS(2);
 		ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 		adj.add(new ArrayList<>(Arrays.asList( 1)));
 		adj.add(new ArrayList<>(Arrays.asList(2)));

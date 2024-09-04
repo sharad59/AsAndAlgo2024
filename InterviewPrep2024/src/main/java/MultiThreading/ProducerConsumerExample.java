@@ -27,7 +27,7 @@ public class ProducerConsumerExample {
 			synchronized (this) {
 				while (l.size() == 0)
 					this.wait();
-				int val = l.removeFirst();
+				int val = l.remove();
 				System.out.println("Consumer consumed " + val);
 				this.notify();
 				Thread.sleep(1000);
